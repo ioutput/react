@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Tabs,Icon,NavBar,List,InputItem } from 'antd-mobile'
+import { Tabs,NavBar,List,InputItem } from 'antd-mobile'
 
 const TabPane = Tabs.TabPane;
 class Login extends Component {

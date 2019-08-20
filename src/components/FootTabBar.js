@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { TabBar,Icon } from 'antd-mobile'
-
 class FootTabBar extends Component {
   
     state = {
@@ -8,7 +7,7 @@ class FootTabBar extends Component {
       hidden: false,
     }
   
-  componentWillMount() {
+    componentDidMount() {
     if(this.props.location.pathname.indexOf('taoqg')>=0){
       this.setState({selectedTab:'taoqg'})
     }else if(this.props.location.pathname.indexOf('juhs')>=0){
@@ -26,23 +25,15 @@ class FootTabBar extends Component {
         unselectedTintColor="#949494"
         tintColor="#33A3F4"
         barTintColor="white"
-         
+        tabBarPosition="bottom"
         hidden={this.state.hidden}
       >
         <TabBar.Item
-          title="淘宝券"
-          key="淘宝券"
-          icon={<div style={{
-            width: '0.44rem',
-            height: '0.44rem',
-            background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  0.42rem 0.42rem no-repeat' }}
-          />
+          title="券推荐"
+          key="券推荐"
+          icon={<Icon type="check" size="md" />
           }
-          selectedIcon={<div style={{
-            width: '0.44rem',
-            height: '0.44rem',
-            background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  0.42rem 0.42rem no-repeat' }}
-          />
+          selectedIcon={<Icon type="check" size="md" />
           }
           selected={this.state.selectedTab === 'index'}
           onPress={() => {
@@ -55,8 +46,8 @@ class FootTabBar extends Component {
           
         </TabBar.Item>
         <TabBar.Item
-          icon={<Icon type="koubei-o" size="md" />}
-          selectedIcon={<Icon type="koubei" size="md" />}
+          icon={<Icon type="up" size="md" />}
+          selectedIcon={<Icon type="up" size="md" />}
           title="淘抢购"
           key="淘抢购"
           selected={this.state.selectedTab === 'taoqg'}
